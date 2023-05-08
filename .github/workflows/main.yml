@@ -26,10 +26,11 @@ jobs:
 
       - name: Create new ElasticBeanstalk Application Version
         run: |
-          aws elasticbeanstalk create-application-version \
+          aws elasticbeanstalk create-environment-update \
           --application-name EBS 02 \
+          --environment-name EBS02-dev \
           --source-bundle S3Bucket="ebs-deploy-usama",S3Key="deploy_package.zip" \
-          --version-label "ver-${{ github.sha }}" \
+          --version-label 12345 \
           --description "commit-sha-${{ github.sha }}" \
 
 
