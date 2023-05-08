@@ -30,8 +30,7 @@ jobs:
           --application-name EBS 02 \
           --source-bundle S3Bucket="ebs-deploy-usama",S3Key="deploy_package.zip" \
           --version-label "ver-${{ github.sha }}" \
-          --description "commit-sha-${{ github.sha }}"
-          --auto-create-application
+          --description "commit-sha-${{ github.sha }}" \
 
 
       - name: Deploy new ElasticBeanstalk Application Version
