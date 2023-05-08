@@ -30,7 +30,7 @@ jobs:
           --application-name EBS 02 \
           --environment-name EBS02-dev \
           --source-bundle S3Bucket="ebs-deploy-usama",S3Key="deploy_package.zip" \
-          --version-label 12345 \
+          --version-label "ver-${{ github.sha }}" \
           --description "commit-sha-${{ github.sha }}" \
 
 
