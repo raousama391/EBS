@@ -31,6 +31,8 @@ jobs:
           --source-bundle S3Bucket="ebs-deploy-usama",S3Key="deploy_package.zip" \
           --version-label "ver-${{ github.sha }}" \
           --description "commit-sha-${{ github.sha }}"
+          --auto-create-application
+
 
       - name: Deploy new ElasticBeanstalk Application Version
         run: aws elasticbeanstalk update-environment --environment-name EBS02-dev-env-1 --version-label "ver-${{ github.sha }}"
